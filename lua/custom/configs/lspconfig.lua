@@ -21,16 +21,16 @@ lspconfig.gopls.setup {
   }
 }
 
--- lspconfig.tsserver.setup {
---     on_attach = on_attach,
---     capabilities = capabilities,
---     init_options = {
---         preferences = {
---             disableSuggestions = true
---         }
---     },
---     filetypes = {"typescript"}
--- }
+lspconfig.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true
+        }
+    },
+    filetypes = {"typescript"}
+}
 
 lspconfig.volar.setup {}
 
