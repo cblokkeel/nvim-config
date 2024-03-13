@@ -14,9 +14,11 @@ local plugins = {
             "gofumpt",
             "goimports-reviser",
             "vue-language-server",
+            "vls",
             "typescript-language-server",
             "eslint-lsp",
-            "prettierd"
+            "prettierd",
+            "emmet-ls",
           }
         }
     },
@@ -37,6 +39,23 @@ local plugins = {
           vim.cmd [[silent! GoInstallDeps]]
         end,
     },
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false
+    },
+    {
+        "junegunn/fzf.vim",
+        lazy = false
+    },
+    {
+        "github/copilot.vim",
+        lazy = false
+    },
+    {
+        "neoclide/coc.nvim",
+        lazy = false,
+        branch = "release"
+    }
 }
 
 return plugins

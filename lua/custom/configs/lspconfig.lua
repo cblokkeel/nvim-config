@@ -29,14 +29,15 @@ lspconfig.tsserver.setup {
             disableSuggestions = true
         }
     },
-    filetypes = {"typescript"}
+    filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact" }
 }
 
-lspconfig.volar.setup {}
-
-lspconfig.cssls.setup {
+lspconfig.volar.setup {
+    on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "css", "scss", "less", "vue" }
+    filetypes = { "vue" }
 }
+
+lspconfig.emmet_ls.setup {}
 
 lspconfig.dockerls.setup{}

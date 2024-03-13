@@ -237,13 +237,13 @@ local default_plugins = {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-telescope/telescope-live-grep-args.nvim" },
     cmd = "Telescope",
     init = function()
       require("core.utils").load_mappings "telescope"
     end,
     opts = function()
-      return require "plugins.configs.telescope"
+        return require "plugins.configs.telescope"
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "telescope")
