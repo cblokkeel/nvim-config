@@ -16,7 +16,10 @@ local plugins = {
             "vue-language-server",
             "typescript-language-server",
             "eslint-lsp",
-            "prettierd"
+            "prettierd",
+            "emmet-ls",
+            "html-lsp",
+            "htmx-lsp",
           }
         }
     },
@@ -26,7 +29,7 @@ local plugins = {
         opts = function ()
           return require "custom.configs.null-ls"
         end
-        },
+    },
     {
         "olexsmir/gopher.nvim",
         ft = "go",
@@ -37,6 +40,10 @@ local plugins = {
           vim.cmd [[silent! GoInstallDeps]]
         end,
     },
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false
+    }
 }
 
 return plugins

@@ -9,7 +9,6 @@ lspconfig.gopls.setup {
   capabilities = capabilities,
   cmd = {"gopls"},
   filetypes = {"go", "gomod", "gowork", "gotmpl"},
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
       completeUnimported = true,
@@ -29,14 +28,36 @@ lspconfig.tsserver.setup {
             disableSuggestions = true
         }
     },
-    filetypes = {"typescript"}
+    filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact"},
 }
 
-lspconfig.volar.setup {}
-
-lspconfig.cssls.setup {
+lspconfig.volar.setup {
+    on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "css", "scss", "less", "vue" }
+    filetypes = {"vue"}
 }
+
+lspconfig.emmet_ls.setup{}
 
 lspconfig.dockerls.setup{}
+
+lspconfig.templ.setup{}
+
+lspconfig.html.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"html", "templ"},
+}
+
+lspconfig.htmx.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"html", "templ"},
+}
+
+lspconfig.tailwindcss.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+    init_options = { userLanguages = { templ = "html" } },
+})
